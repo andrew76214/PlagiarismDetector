@@ -6,8 +6,10 @@ import { Progress } from "@/components/ui/progress";
 import { Textarea } from "@/components/ui/textarea";
 import { Upload } from "lucide-react";
 
-const upload_text_API = import.meta.env.VITE_API_URL_TEXT_GENERATED;
-const upload_pdf_API = import.meta.env.VITE_API_URL_PDF_GENERATED;
+let upload_text_API = import.meta.env.VITE_API_URL_TEXT_GENERATED;
+let upload_pdf_API = import.meta.env.VITE_API_URL_PDF_GENERATED;
+upload_text_API = upload_text_API.replace(/\\x3a/g, ":");
+upload_pdf_API = upload_pdf_API.replace(/\\x3a/g, ":");
 
 // Skeleton component
 const Skeleton = ({ className }: { className?: string }) => {
@@ -235,7 +237,7 @@ export default function ScanRephrase() {
                 ) : (
                     <Card className="p-6 max-w-3xl mx-auto">
                         <h2 className="text-2xl font-bold">Plagiarism Detection Results</h2>
-                        <CardContent className="mt-4">
+                        <CardContent className="mt-2">
                             <div className="mt-6">
                                 <p className="font-semibold">Original Text with Highlighted Plagiarism Snippet</p>
                                 <div

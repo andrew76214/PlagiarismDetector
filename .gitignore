@@ -2,7 +2,12 @@
 paper_webcrawling/paper/
 dataset/
 output.txt
+input.txt
 uploaded_pdfs/
 nginx_logs/
 kb_faiss_index/
 demo_data/
+elasticsearch_data/
+nltk_data/
+es_tmp/
+__pycache__/
